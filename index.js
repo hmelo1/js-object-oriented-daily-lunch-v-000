@@ -34,12 +34,9 @@ class Employer{
     return uniqueMeals;
   }
 
-  mealTotals() {
+mealTotals() {
     let total = {}
-    let customerCount = 0;
-    this.meals().map(meal => total[meal.id] = meal.customers().map(customer =>{
-      ++customerCount
-    }))
+    this.meals().map(meal => total[meal.id] == meal.customers().length)
     return total
   }
 //  mealTotals() {
