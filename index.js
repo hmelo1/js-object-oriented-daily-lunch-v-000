@@ -36,7 +36,7 @@ class Employer{
 
 mealTotals() {
     let total = {}
-    this.meals().map(meal => total[meal.id] == meal.customers().length)
+    this.meals().map(meal => total[meal.id] = meal.customers().length)
     return total
   }
 //  mealTotals() {
