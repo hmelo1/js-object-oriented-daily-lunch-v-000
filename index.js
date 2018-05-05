@@ -36,22 +36,25 @@ class Employer{
 
   mealTotals() {
     let total = {}
-    this.meals().map(meal => total[meal.id] = meal.customers().length)
+    let customerCount = 0;
+    this.meals().map(meal => total[meal.id] = meal.customers().map(customer =>{
+      ++customerCount
+    }))
     return total
   }
-  mealTotals() {
-   let allMeals = this.deliveries().map(delivery => {
-     return delivery.meal();
-   });
-   let summaryObject = {};
-   allMeals.forEach(function(meal) {
-     summaryObject[meal.id] = 0;
-   });
-   allMeals.forEach(function(meal) {
-     summaryObject[meal.id] += 1;
-   });
-   return summaryObject;
- }
+//  mealTotals() {
+  // let allMeals = this.deliveries().map(delivery => {
+  //   return delivery.meal();
+  // });
+  // let summaryObject = {};
+  // allMeals.forEach(function(meal) {
+  //   summaryObject[meal.id] = 0;
+  // });
+  // allMeals.forEach(function(meal) {
+  //   summaryObject[meal.id] += 1;
+  // });
+  // return summaryObject;
+ //}
 }
 
 class Customer{
