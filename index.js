@@ -30,7 +30,8 @@ class Employer{
     let meals = this.deliveries().map((delivery) => delivery.meal())
 
     //return a uniquified(?) array
-    return [... new Set(meals)]
+    let uniqueMeals = [... new Set(meals)]
+    return uniqueMeals;
   }
 
   mealTotals() {
